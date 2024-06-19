@@ -38,12 +38,12 @@ let onePointStructure = {
 
 function simpleScorer(word) {
   word = word.toUpperCase();
-let score= 0;
+  let score= 0;
 
   for (let i = 0; i < word.length; i++) {
-    for (let pointValue in onePointStructure) {
-      if (onePointStructure[pointValue].includes(word[i])) {
-        score += Number(pointValue);
+    for (let key in onePointStructure) {
+      if (onePointStructure[key].includes(word[i])) {
+        score += Number(key);
       }
     }
   }
@@ -59,9 +59,9 @@ function vowelBonusScorer(word) {
    let score = 0;
  
    for (let i = 0; i < word.length; i++) {
-     for (let pointValue in bonusPointVowelStructure) {
-       if (bonusPointVowelStructure[pointValue].includes(word[i])) {
-        score += Number(pointValue);
+     for (let key in bonusPointVowelStructure) {
+       if (bonusPointVowelStructure[key].includes(word[i])) {
+        score += Number(key);
        }
      }
    }
